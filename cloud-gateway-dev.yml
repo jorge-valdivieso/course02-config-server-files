@@ -2,17 +2,21 @@ server:
   port: ${CUSTOM.SERVER.PORT:9090}
 
 eureka:
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 30
   client:
     register-with-eureka: true
     service-url:
       defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
+    fetchRegistry: true
 
 spring:
   cloud:
     gateway:
       routes:
         - id: user-service
-          uri: http://user-service
+          uri: lb://user-service
           predicates:
             - Path=/api/user-service/**
           filters:
