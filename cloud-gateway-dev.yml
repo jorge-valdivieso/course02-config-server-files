@@ -28,7 +28,7 @@ spring:
             - Path=/api/product-service/**
           filters:
             - StripPrefix=2
-            - name: CustomFilter
+            - CustomFilter
               args:
                 headerKey: MitocodeKey
                 headerValue: MitocodeValue
