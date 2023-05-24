@@ -31,9 +31,10 @@ spring:
             # - AddRequestParameter=tokens,mitocode
             # - AddRequestHeader=token,mitocode
             # - AddResponseHeader=CUSTOM_RESPONSE_HEADER,HEADER_Mitocode
-
-            # - MitocodeFilter=MitocodeKey, MitocodeValue
-            - name: CustomFilter
-              args:
-                headerKey: MitocodeKey
-                headerValue: MitocodeValue
+            # Forma 2 ver CustomFilter.java
+            - MitocodeFilter=MitocodeKey, MitocodeValue
+            # Forma 1 ver CustomFilter.java
+            # - name: CustomFilter
+            #   args:
+            #     headerKey: MitocodeKey
+            #     headerValue: MitocodeValue
