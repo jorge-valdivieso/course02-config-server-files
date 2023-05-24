@@ -28,12 +28,6 @@ spring:
             - Path=/api/product-service/**
           filters:
             - StripPrefix=2
-            # - AddRequestParameter=tokens,mitocode
-            # - AddRequestHeader=token,mitocode
-            # - AddResponseHeader=CUSTOM_RESPONSE_HEADER,HEADER_Mitocode
-
-            # - MitocodeFilter=MitocodeKey, MitocodeValue
-
             - name: CustomFilter
               args:
                 headerKey: MitocodeKey
